@@ -121,7 +121,9 @@ function edit(index) {
     addTitle.value = notesObj[index].title;
     // console.log(notesObj[index].txt);
     // console.log(notesObj[index].title);
-    deleteNote(index);
+    notesObj.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notesObj));    //now updating local storage..
+    showNotes();
 }
 
 
